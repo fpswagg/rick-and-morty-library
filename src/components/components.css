@@ -1,0 +1,82 @@
+.card-title {
+    margin-bottom: 4px;
+}
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 8px;
+}
+
+.card-content {
+    font-size: 1em;
+    color: var(--text);
+    text-align: center;
+}
+
+.card {
+    --x: 0;
+
+    background-color: var(--accent);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 8px;
+    padding: 8px;
+    cursor: pointer;
+    width: 200px;
+    position: absolute;
+    left: 75%;
+    top: 55%;
+    transform: translate(-50%, -50%) rotate(calc(var(--x) * 6deg));
+    transition: all 0.3s;
+    transform-origin: center;
+    cursor: pointer;
+}
+
+.card.first {
+    transform: translate(-50%, -50%) rotate(calc(var(--x) * 6deg)) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card.first:hover {
+    transform: translate(-50%, -50%) rotate(calc(var(--x) * 6deg)) scale(1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card.away {
+    transform: translate(-50%, -100vh) rotate(0deg);
+    opacity: 0%;
+    cursor: default;
+}
+.card.unloaded {
+    transform: translate(100vw, -50%) rotate(0deg);
+    opacity: 0%;
+    cursor: default;
+}
+
+.character-details {
+    position: fixed;
+    display: flex;
+
+    top: 60%;
+    left: 100px;
+    padding: 25px;
+    gap: 20px;
+
+    transform: scale(1.25) translateY(-50%);
+
+    img {
+        width: 200px;
+        height: 200px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 1px black;
+    }
+
+    * {
+        user-select: none;
+    }
+
+    p {
+        margin: 0;
+    }
+}
